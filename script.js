@@ -17,5 +17,11 @@ function compareColor(event) {
   randomColor();
 }
 
+function resetGame() {
+  randomColor();
+  document.getElementById('answer').innerText = 'Escolha uma cor';
+}
+
 randomColor();
 document.getElementById('colors').addEventListener('click', compareColor);
+document.getElementById('reset-game').addEventListener('click', resetGame);
