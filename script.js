@@ -1,3 +1,5 @@
+let sum = 0;
+
 function randomColor() {
   const ball = document.querySelectorAll('.ball');
   const randomNum = Math.floor(Math.random() * 6);
@@ -9,11 +11,16 @@ function randomColor() {
 }
 
 function compareColor(event) {
-  if (event.target.style.backgroundColor === document.getElementById('rgb-color').innerText) {
+  const score = document.getElementById('score');
+  if (
+    event.target.style.backgroundColor === document.getElementById('rgb-color').innerText
+  ) {
     document.getElementById('answer').innerText = 'Acertou!';
+    sum += 3;
   } else {
     document.getElementById('answer').innerText = 'Errou! Tente novamente!';
   }
+  score.innerHTML = `Placar: ${sum}`;
   randomColor();
 }
 
